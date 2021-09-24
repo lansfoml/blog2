@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+            <style>
+                p {
+                    text-align: left; 
+                    font-size: 18px;
+                    padding-left: 25px; 
+                    padding-right: 25px; 
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    margin-left: 50px;
+                    margin-right: 50px;
+        
+                }
+                h1 {
+                    text-align: center; 
+                }
+        
+                h2 {
+                    text-align: center; 
+                }
+                .container {
+                    
+                    display: flex;
+            
+            }
+
+             code {
+                    text-align: left; 
+                    padding-left: 15px; 
+                    padding-right: 15px; 
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    margin-left:10px;
+                    margin-right: 10px;
+            }
+
+            button {
+                margin: 10px;
+            }
+            footer p {
+                text-align: center;
+            }
+                </style>
+    </head>
+
+<body>
+    <h1>Blog 4</h1>
+    <h2>Friday, September 24th, 2021</h2>
+
+    <p>This week we will be exploring Javascript for the first time ever. I have some previous experience using CSS and HTML, but
+        have never used or implemented Javascript into my work. HTML and CSS are markup languages that provide web pages structure and style.
+        JavaScript is a programming language that allows you to construct interactive web pages. With javascript you can reveal or hide informtion
+        just by clicking a button (which I will show below), change the color of items when they are hovered over, display animations, and more.
+    </p>
+    <div class="container">
+        <p>The code below shows how to make a button to display a date:</p>
+        <p>Go ahead, Click it!</p>
+    </div>
+    
+    <div class="container">
+        <code> &lt;button type="button"
+            onclick="document.getElementById('demo').innerHTML = Date()">
+            Click me to display Date and Time.&lt;/button&gt; "</code>
+
+            <button type="button"
+                onclick="document.getElementById('demo').innerHTML = Date()">
+                Click me to display Date and Time.</button>
+            
+
+                <p id="demo"></p>
+
+
+    </div>
+    <hr style="width:100%;text-align:left;margin-left:0">
+
+    <p>A big part of this is using getElementById(), to identify which attributes you would like to alter and what you would like 
+        to do to them. For example Javascript can also alter the CSS of particular attributes. 
+    </p>
+
+    <div class="container"> 
+        <p> The code below is the code to alter the CSS of a particular attribute with the id of "example" when the button is
+            pressed.
+        </p>
+        <p>CLICK, CLICK, CLICK, CLICK</p>
+    </div>
+
+    <div class="container">
+        <code>
+            &lt;button type="button" onclick="document.getElementById('example').style.fontSize='35px'">Click Me!&lt;/button&gt;
+        </code>
+
+        <p id="example">JavaScript can change the style of an HTML element.
+
+        </p>
+        <button type="button" onclick="document.getElementById('example').style.fontSize='25px'">Make Bigger!
+        </button>
+        <button type="button" onclick="document.getElementById('example').style.fontSize='10px'">Make Smaller!
+        </button>
+    </div>
+
+    <p>
+        Javascript makes it easier to create responsive designs as I add more interaction and complexity to my programs, JavaScript has become 
+        an essential part of the Internet as a whole. It is necessary for search engines, ecommerce, content management systems, responsive 
+        design, social media, mobile apps, and more to exist. Making your site or app more interactive can benefit you and the user. Making
+        the app or website easier to use, as well as more entertaining for you and the user, which also allows you to do more with your
+        application.
+    </p>
+    
+</body>
+
+<footer>
+    <p>Author: Matt Lansford</p>
+    <p>References: <a href="https://www.hackreactor.com/blog/what-is-javascript-used-for">First Source</a></p>
+
+</footer>
+
+
+</html>
