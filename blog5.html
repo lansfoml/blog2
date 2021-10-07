@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+                h1 {
+                    text-align: center; 
+                }
+        
+                h2 {
+                    text-align: center; 
+                }
+
+                .container {
+                    display: flex;
+                    flex-direction: row;
+                }
+
+                #slide-full {
+                    animation-duration: 3s;
+                    animation-name: slidein;
+                    text-align: left; 
+                    font-size: 18px;
+                    padding-left: 25px; 
+                    padding-right: 25px; 
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+
+                    }
+                #slide-half {
+                    animation-duration: 3s;
+                    animation-name: slidein2;
+                    text-align: left; 
+                    font-size: 18px;
+                    padding-left: 25px; 
+                    padding-right: 25px; 
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    margin-left: 50%;
+
+                    }
+
+                    @keyframes slidein {
+                        from {
+                            margin-left: 100%;
+                            width: 300%;
+                        }
+
+                        to {
+                            margin-left: 0%;
+                            width: 100%;
+                        }
+                    }
+
+                    @keyframes slidein2 {
+                        from {
+                            margin-left: 100%;
+                            width: 300%;
+                        }
+
+                        to {
+                            margin-left: 50%;
+                            width: 100%;
+                        }
+                    }
+                    
+
+                    div {
+                        padding-left: 25px; 
+                        padding-right: 25px; 
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        margin-left: 50px;
+                        margin-right: 50px;
+                    }
+
+                    #square {
+                        width: 50px;
+                        height: 50px;
+                        background-color: red;
+                        position: relative;
+                        animation-name: square;
+                        animation-duration: 4s;
+                        animation-iteration-count: infinite;
+                        }
+
+                        @keyframes square {
+                        0%   {background-color:red; left:0px; top:0px;}
+                        25%  {background-color:yellow; left:200px; top:0px;}
+                        50%  {background-color:blue; left:200px; top:200px;}
+                        75%  {background-color:green; left:0px; top:200px;}
+                        100% {background-color:red; left:0px; top:0px;}
+                        }
+
+                        footer p {
+                text-align: center;
+            }
+        </style>
+    </head>
+
+<body>
+    <h1>Blog 5</h1>
+    <h2>Friday, October 8th, 2021</h2>
+<p id="slide-full">
+    
+    This week we will be learning about animations. If this works hopefully the text will be 
+    sliding into the screen right now. Transitions from one CSS style configuration to another can 
+    be animated using CSS animations. A style describing the CSS animation and a series of keyframes 
+    indicating the start and finish states of the animation's style, make up an animation. The code for the 2 animations will be 
+    listed below:
+</p>
+<div class="container">
+    <div>
+        <code>
+            p { <br>
+                &emsp;animation-duration: 3s;<br>
+                &emsp;animation-name: slidein;<br>
+            }
+            </code>
+            <br>
+
+            <code>
+                @keyframes slidein { <br>
+                    &emsp;from { <br>
+                        &emsp;&emsp;margin-left: 100%; <br>
+                        &emsp;&emsp;width: 300%;<br>
+                }<br>
+            </code>
+            
+            
+            <code>
+                &emsp;to { <br>
+                    &emsp;&emsp;margin-left: 0%;<br>
+                    &emsp;&emsp;width: 100%;<br>
+                    &emsp;}<br>
+                }
+
+            </code>
+        </div>
+
+        <div>
+            <code>
+                p { <br>
+                    &emsp;animation-duration: 3s;<br>
+                    &emsp;animation-name: slidein;<br>
+                }
+                </code>
+                <br>
+            
+                <code>
+                    @keyframes slidein { <br>
+                        &emsp;from { <br>
+                            &emsp;&emsp;margin-left: 100%; <br>
+                            &emsp;&emsp;width: 300%;<br>
+                    }<br>
+                </code>
+                
+                
+                <code>
+                    &emsp;to { <br>
+                        &emsp;&emsp;margin-left: 50%;<br>
+                        &emsp;&emsp;width: 100%;<br>
+                        &emsp;}<br>
+                }
+            
+            </code>
+    </div>
+    <div id="square"></div>
+
+</div>
+
+<p id="slide-half">
+    You can also make shapes and have animations for them. For example we made a div into a 50px x 50px square that 
+    slides in a sqaure while changing colors just by using simple css and animations. We have set it to run an infinite number
+    of times, but you can set it to only do the animation however many times you want.
+</p>
+<p id="slide-full">
+    For the top paragraph the margin-left aspect in the "from" block starts at 100% so it starts all the way on the right. The margin-left
+    in the "to" block then goes to 0% which means it will end up all the way on the left. For the paragraph right 
+    below the square the margin-left in the "to" block is switched to 50% so this paragraph only slide 
+    halfway across the screen. Animations are a cool and fun way to spice up your page as well as learn somehting new
+    that will really catch the users eye.
+</p>
+
+
+</body>
+<footer>
+    <p>Author: Matt Lansford</p>
+    <p>References: <a href="https://www.w3schools.com/css/css3_animations.asp">First Source</a></p>
+
+</footer>
+
+</html>
