@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+
+            <style>
+                h1 {
+                    text-align: center; 
+                }
+        
+                h2 {
+                    text-align: center; 
+                }
+            canvas { background: #eee; }
+            div {
+                margin: 10px;
+                padding: 10px;
+            }
+
+            body {
+                background-color: black;
+                color: white;
+            }
+
+            footer p {
+                text-align: center;
+            }
+            </style>
+    </head>
+
+<body>
+    <h1>Blog 6</h1>
+    <h2>Friday, October 15th, 2021</h2>
+    <div style="display: flex;">
+        <div>
+        <canvas id="myCanvas" width="480" height="320"></canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            var ballRadius = 10;
+            var x = canvas.width/2;
+            var y = canvas.height-30;
+            var dx = 2;
+            var dy = -2;
+            
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+                ctx.fillStyle = "#0095DD";
+                ctx.fill();
+                ctx.closePath();
+                
+                if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+                    dx = -dx;
+                }
+                if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
+                    dy = -dy;
+                }
+                
+                x += dx;
+                y += dy;
+            }
+            
+            setInterval(draw, 10);</script>
+            </div>
+
+            <div style="width: 50%;">
+                <p>Today we will once again be going over some javascript and specifically the aspects of drawing and 
+                    moving items. There should be a canvas to the left of this paragraph with a ball bouncing around 
+                    inside of it.
+                </p>
+                <p>
+                    In order to create something like this you need to create a canvas using the <code>&lt;canvas&gt;</code>
+                     tag. After creating the canvas in your script tag you should make a variable that gets the canvas
+                     you just made doing something like <code>var canvas = document.getElementById("myCanvas");</code>
+                </p>
+
+                <p>Now that you have your canvas you are going to want to draw something on it. In order to do this you must 
+                    use the HTMLCanvasElement.getContext() method which returns a drawing context on the canvas, or 
+                    null if the context identifier is not supported. The parameter that we used in getContext() was "2d",
+                    2d allows you to create 2d objects on the canvas. To draw this circle we see bouncing around, we use: <br> 
+                    <code>varName.arc(x, y, ballRadius, 0, Math.PI*2);</code> <br> Where the x parameter is the 
+                    horizontal coordinate of the arc's center, the y parameter is the vertical coordinate of the arc's,
+                    ballRadius is the radius of the circle, and the Math.PI*2 makes it a circle. With this variable you 
+                    can also make other shapes like rectangles and triangles as well.
+                     
+                </p>
+                <p>Keeping the ball within the given canvas takes a little bit of math to calculate it correctly. 
+                    We do this by checking:<br> <code>if(x + dx > canvas.width-ballRadius || x + dx &gt; ballRadius) { <br>
+                        &emsp;dx = -dx;<br>
+                    }</code> <br> which checks if the position is within the canvas broders as well as including the balls radius in
+                     that as well.
+
+                </p>
+            </div>
+    
+            
+    </div>
+
+</body>
+<footer>
+    <p>Author: Matt Lansford</p>
+    <p>References: <a href="https://www.w3schools.com/css/css3_animations.asp">First Source</a></p>
+</footer>
+    
+</html>
