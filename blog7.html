@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h1 {
+                    text-align: center; 
+                }
+        
+                h2 {
+                    text-align: center; 
+                }
+            *{
+                margin: 0;
+                padding: 0;
+                background: #000;
+                color: white;
+            }
+
+            section {
+                padding: 50px;
+            }
+
+            ::-webkit-scrollbar {
+                width: 0px;
+            }
+
+            #sPath {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 10px;
+                background: rgba(255, 255, 255, 0.05);
+
+            }
+
+            #pBar {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 10px;
+                
+                background: linear-gradient(to top, #008aff,#00ffe7);
+                animation: animate1 5s linear infinite;
+            }
+
+            @keyframes animate1 {
+                0%,100% {
+                    filter: hue-rotate(0deg);
+                }
+                50% {
+                    filter: hue-rotate(360deg);
+                }
+            }
+
+            #pBar :before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to top, #008aff,#00ffe7);
+                filter: blur(10px);
+            }
+
+            #pBar :after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to top, #008aff,#00ffe7);
+                filter: blur(30px);
+            }
+
+            #butSection {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                flex-direction: column;
+                padding: 0;
+
+            }
+
+            a {
+                padding: 12px 36px;
+                margin: 10px;
+                color: #fff;
+                border-radius: 40px;
+                background: linear-gradient(90deg, #0162c8, #55e7fc);
+
+            }
+
+            a:nth-child(2) {
+                background: linear-gradient(90deg, #0162c8, #ff72c0);
+            }
+
+            span {
+                position: absolute;
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+                border-radius: 50%;
+                background: #fff;
+                animation: animates 1s linear infinite;
+            }
+
+            p {
+                max-width: 70%;
+            }
+
+            @keyframes animates {
+                0% {
+                    width: 0px;
+                    height: 0px;
+                }
+                100% {
+                    width: 500px;
+                    height: 500px;
+                    
+                }
+            }
+
+
+
+        </style>
+    </head>
+
+    <body>
+        <h1>Blog 7</h1>
+        <h2>Friday, November 4th, 2021</h2>
+
+        <div id="pBar"></div>
+        <div id="sPath"></div>
+
+        <section>
+            <p> This weeks blog post was supposed to be on javascript animations and all the cool things that you can
+                accomplish with it. I was attempting to make a scroll bar that would light up and change colors 
+                with a  fading gradient. I also attempted to try to make an animation happen with these buttons when they
+                are clicked. As you can see neither of these went according to plan. This is all apart of coding and learning as a
+                programmer. Things are not always going to agree with you or turn out the way you would like, but if you keep
+                working at it then you can eventually become great at your given task.
+            </p>
+            <br>
+            
+                I attempted to make the scroll bar colorful by using animation 
+                <pre style="color: red;">
+                    <br>background: linear-gradient(to top, #008aff,#00ffe7);
+                    <br>
+                    animation: animate 5s linear infinite;</pre> 
+                    <br>
+                    <p>
+                        This animation only occurs when you scroll down on the page and refresh it. So it does not work as a scroll bar.
+                        This did not work so I tried to make some buttons that would have an effect when clicked.  
+                    The buttons when clicked are supposed to have a white circle appear from where you clicked opn the button.
+                    Instead it appears in the top left corner instead of in the button. This can be done using an event EventListener
+                    <br> <br>
+                    <pre style="color: red";> btn.addEventListener('click', function(e) {</pre> <br>
+                        <p> Which repsongs to your click. Moral of the story is that things are not always going to 
+                            go your way, but if you keep working at them you can achieve whatever you please. Unfortuenately 
+                            I will not be able to finish these animations this week before they are due, but plan to come back
+                            to them when I have more time.
+                        </p>
+            </p>
+        </section>
+        <section id="butSection">
+            <a href = #>Button 1</a>
+            <a href = #>Button 2</a>
+            <script>
+                const buttons = document.querySelectorAll('a');
+                buttons.forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        let x = e.clientX - e.target.offsetLeft;
+                        let y = e.clientY - e.target.offsetTop;
+
+                        let effect = document.createElement('span');
+                        effect.style.left = x + 'px';
+                        effect.style.top = x + 'px';
+                        this.appendChild(effect);
+
+                         setTimeout(() => {
+                            effect.remove()
+                         },1000);
+
+                    })
+                })
+            </script>
+        </section>
+
+        <script type="text/javascript">
+        let progress = document.getElementById('pBar');
+        let totHeight = document.body.scrollHeight - window.innerHeight;
+        let pHeight = (window.pageYOffset / totHeight) * 100;
+        progress.style.height = pHeight + "%";
+
+        
+
+        </script>
+
+
+    </body>
+    <footer>
+        <p style="text-align:center">Author: Matt Lansford</p>
+        
+    </footer>
+</html>
